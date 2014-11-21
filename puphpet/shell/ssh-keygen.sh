@@ -78,3 +78,7 @@ if [ "${VAGRANT_SSH_USERNAME}" != 'root' ]; then
 
     passwd -d "${VAGRANT_SSH_USERNAME}" >/dev/null
 fi
+
+chmod -R 777 /var/www/vagrant/puphpet/files/startup-always
+    echo "Made files in startup folder executable by any user"
+    ls -lha /var/www/vagrant/puphpet/files/startup-always

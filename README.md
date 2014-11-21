@@ -15,8 +15,8 @@ Notice the framework and its modules are contained in "website".  This term ambi
 Lets checkout the framework and yii2
     
     cd <project>
-    git clone git@git.joshualivesay.com:framework/website.git
-    git clone git@git.joshualivesay.com:framework/yii2.git
+    git clone git@git.joshualivesay.com:prototype/website.git
+    git clone git@git.joshualivesay.com:prototype/yii2.git
 
 Provision the development server.  (Go get coffee)
 

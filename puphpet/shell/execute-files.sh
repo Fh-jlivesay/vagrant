@@ -38,7 +38,9 @@ echo "Running files in files/${EXEC_ALWAYS_DIR}"
 
 find "${VAGRANT_CORE_FOLDER}/files/${EXEC_ALWAYS_DIR}" -maxdepth 1 -type f -name '*.sh' | sort | while read FILENAME; do
     chmod +x "${FILENAME}"
-    /bin/bash "${FILENAME}"
+    dos2unix "${FILENAME}" &> /dev/null
+    output="$(/bin/bash "${FILENAME}")"
+    echo "${output}"
 done
 
 echo "Finished running files in files/${EXEC_ALWAYS_DIR}"
