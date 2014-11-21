@@ -63,6 +63,8 @@ server:
     install: '1'
     packages:
         - vim-common
+        - dos2unix
+        - vim
 firewall:
     install: '1'
     rules:
@@ -189,7 +191,7 @@ python:
 mysql:
     install: '1'
     override_options: {  }
-    root_password: h0llister
+    root_password: fischer
     adminer: 0
     databases:
         GnnA53nE0I2r:
@@ -198,7 +200,7 @@ mysql:
             name: fischer_apps
             host: localhost
             user: wwwuser
-            password: h0llister
+            password: fischer
             sql_file: /var/www/website/sql/fischer_apps.sql
         HacAt3nd0I2r:
             grant:

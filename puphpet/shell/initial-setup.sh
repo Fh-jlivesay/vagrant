@@ -45,10 +45,6 @@ if [ "${OS}" == 'debian' ] || [ "${OS}" == 'ubuntu' ]; then
     apt-get -y install git-core >/dev/null
     echo 'Finished installing git'
 
-    echo 'Installing dos2unix'
-    apt-get -y install dos2unix >/dev/null
-    echo 'Finished installing dos2unix'
-
     if [[ "${CODENAME}" == 'lucid' || "${CODENAME}" == 'precise' ]]; then
         echo 'Installing basic curl packages'
         apt-get -y install libcurl3 libcurl4-gnutls-dev curl >/dev/null
@@ -58,6 +54,7 @@ if [ "${OS}" == 'debian' ] || [ "${OS}" == 'ubuntu' ]; then
     echo 'Installing build-essential packages'
     apt-get -y install build-essential >/dev/null
     echo 'Finished installing build-essential packages'
+
 elif [[ "${OS}" == 'centos' ]]; then
     echo 'Adding repos: elrep, epel, scl'
     perl -p -i -e 's@enabled=1@enabled=0@gi' /etc/yum/pluginconf.d/fastestmirror.conf
@@ -80,9 +77,6 @@ elif [[ "${OS}" == 'centos' ]]; then
     yum -y groupinstall 'Development Tools' >/dev/null
     echo 'Finished installing Development Tools'
 
-    echo 'Installing dos2unix'
-    yum -y install dos2unix >/dev/null
-    echo 'Finished installing dos2unix'
 fi
 
 touch '/.puphpet-stuff/initial-setup-base-packages'

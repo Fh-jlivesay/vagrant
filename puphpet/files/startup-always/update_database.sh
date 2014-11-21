@@ -1,5 +1,5 @@
 #!/bin/bash
-MYSQL_PWD=h0llister
+MYSQL_PWD=fischer
 mysqldump -u root fischer_apps > /root/fischer_apps.sql
 
 dos2unix /var/www/website/sql/settings.conf &>/dev/null

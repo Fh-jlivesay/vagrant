@@ -4,6 +4,6 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=fischer_apps',
     'username' => 'wwwuser',
-    'password' => 'h0llister',
+    'password' => 'fischer',
     'charset' => 'utf8',
 ];
