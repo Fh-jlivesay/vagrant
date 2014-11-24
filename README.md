@@ -25,11 +25,12 @@ Provision the development server.  (Go get coffee)
     vagrant up
 
 The server exists locally at 192.168.56.101.  Point your domains at it.
+    Linux/Mac Users:
     # echo '192.168.56.101 fischer.dev www.fischer.dev' >> /etc/hosts
 
-    Windows users can run hosts.bat from this directory and it should.
-    add this line to \Windows\system32\drivers\etc\hosts file
-    192.168.56.101 fischer.dev www.fischer.dev
+    Windows users can run hosts.bat from this directory and it should
+    add this line to the \Windows\system32\drivers\etc\hosts file
+        192.168.56.101 fischer.dev www.fischer.dev
     notepad c:\Windows\system32\drivers\etc\hosts (To verify)
     
 Check that fischer.dev is hosting your shiny new dev environment.
@@ -40,39 +41,41 @@ Database:
            http://dev.mysql.com/downloads/workbench/
 
     On "Setup New Connection"
-        Connection Method is "Standard TCP/IP over SSH"
-        SSH Hostname: fischer.dev:22
-        SSH Username: vagrant
+        Connection Method:  "Standard TCP/IP over SSH"
+        SSH Hostname:       fischer.dev:22
+        SSH Username:       vagrant
             NO PASSWORD
-        SSH Key File:  <Project PATH>\vagrant\puphpet\files\dot\ssh\id_rsa
-                    For me it was.
-                        C:\Users\jlivesay\Projects\Fischer\vagrant\puphpet\files\dot\ssh\id_rsa
+        SSH Key File:       <Project PATH>\vagrant\puphpet\files\dot\ssh\id_rsa
+                                For me it was:
+                                C:\Users\jlivesay\Projects\Fischer\vagrant\puphpet\files\dot\ssh\id_rsa
 
-        MySQL Hostname: 127.0.0.1
-        Port 3306
-        username root
-        password Click store in vault and type "fischer"
-        Default Schema (optional) - fischer_apps
+        MySQL Hostname:     127.0.0.1
+        Port:               3306
+        MySql Username:     root
+        Password:           Click store in vault and type "fischer"
+        Default Schema:     fischer_apps (optional)
 
-        Click on Advanced tab and "Use Compression Protocol"
+        Click on the Advanced tab and "Use Compression Protocol"\
 
         Test and Save.
 
 
+The system is nearly self-deploying.  However i'm still running into an issue with some packages not being installed.
 
-(FYI) - The system is not fully self-deploying yet.  You WILL get an error
 
+A little more info about vagrant.
     $ vagrant halt (stops the machine)
     $ vagrant destroy (deletes the machine)
     $ vagrant up (brings it back online)
     $ vagrant provision --provision (reprovisions when changes happen)
 
 
-ISSUES:
+FIX:
     Trouble running vagrant on VM with bridged connection.
+    Sometimes server packages are not installed.
     
 TODO:
-    Write a bash script to run database updates without provisioning
+    document the script to run database updates without provisioning
     Add ssh keys to .gitignore
     Workout Network vs Subnet issues.
     Keep this documentation up to date.
