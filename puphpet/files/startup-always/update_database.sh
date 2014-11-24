@@ -1,6 +1,7 @@
 #!/bin/bash
 MYSQL_PWD=fischer
 mysqldump -u root fischer_apps > /root/fischer_apps.sql
+sed -i '/Dump completed on/d' /root/fischer_apps.sql
 
 dos2unix /var/www/website/sql/settings.conf &>/dev/null
 source /var/www/website/sql/settings.conf

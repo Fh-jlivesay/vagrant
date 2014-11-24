@@ -208,7 +208,7 @@ mysql:
             name: ealert
             host: localhost
             user: wwwuser
-            password: h0llister
+            password: fischer
             sql_file: /var/www/website/sql/ealert.sql
 postgresql:
     install: '0'
