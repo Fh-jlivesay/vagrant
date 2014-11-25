@@ -34,6 +34,8 @@ The server exists locally at 192.168.56.101.  Point your domains at it.
     notepad c:\Windows\system32\drivers\etc\hosts (To verify)
     
 Check that fischer.dev is hosting your shiny new dev environment.
+            'username' => 'admin',
+			'password' => 'password',
 
 Database:
 
@@ -55,12 +57,18 @@ Database:
         Password:           Click store in vault and type "fischer"
         Default Schema:     fischer_apps (optional)
 
-        Click on the Advanced tab and "Use Compression Protocol"\
+        Click on the Advanced tab and "Use Compression Protocol"
 
         Test and Save.
 
+Database Update Script:
 
-The system is nearly self-deploying.  However i'm still running into an issue with some packages not being installed.
+    There is an included database update script that uses the mysql database found in website/sql/fischer_apps.sql
+    The default behavior of this script is to import the db the first time, then leave it alone forever after that.
+    To modify the behavior of the script take a look at website/sql/settings.conf
+    The script runs only on vagrant up,  so you'll need to change the settings then vagrant halt && vagrant up
+    You can export changes that you've made, import the changed sql file,  keep it up to date w/ the repo or restore
+    backups.
 
 
 A little more info about vagrant.
@@ -69,14 +77,11 @@ A little more info about vagrant.
     $ vagrant up (brings it back online)
     $ vagrant provision --provision (reprovisions when changes happen)
 
-
 FIX:
     Trouble running vagrant on VM with bridged connection.
-    Sometimes server packages are not installed.
     
 TODO:
     document the script to run database updates without provisioning
-    Add ssh keys to .gitignore
     Workout Network vs Subnet issues.
     Keep this documentation up to date.
     To apply server config changes after a pull
